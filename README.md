@@ -1,6 +1,6 @@
 # StructFormer: Structure-Consistent Face De-Identification under Strong Privacy Constraints
  
-Official PyTorch implementation of [CIAGAN Conditional Identity Anonymization Generative Adversarial Networks](http://openaccess.thecvf.com/content_CVPR_2020/papers/Maximov_CIAGAN_Conditional_Identity_Anonymization_Generative_Adversarial_Networks_CVPR_2020_paper.pdf) published at Conference on Computer Vision and Pattern Recognition (CVPR) 2020.
+Official PyTorch implementation of [StructFormer: Structure-Consistent Face De-Identification under Strong Privacy Constraints](https://openaccess.thecvf.com/content/WACV2026W/GAPBio/papers/Zhu_StructFormer_Structure-Consistent_Face_De-Identification_under_Strong_Privacy_Constraints_WACVW_2026_paper.pdf)
 
 ## Installation
 
@@ -16,6 +16,15 @@ To install the dependencies:
 ````
 pip install -r requirements.txt
 ````
+````
+Before training, please download the weights. Baidu Netdisk link: 
+链接: https://pan.baidu.com/s/1uUa8SEvDdtENTV53gZzUwQ?pwd=4wfm 提取码: 4wfm
+The directories are respectively:
+source/shape_predictor_68_face_landmarks.dat
+facenet_pytorch/20180402-114759-vggface2.pt
+facenet_pytorch/20180408-102900-casia-webface.pt
+dataset/celeba/modelG_ciagan.pth
+````
 
 ## Training
 
@@ -25,11 +34,14 @@ In order to train a Structormer model, run the following command:
 python train.py
 ````
 
-We provided an example of our dataset that contains 1200 identity folders from celebA dataset in the dataset folder. To train with full celebA dataset (or your own dataset), please setup the data in the same format. For the results generated in our paper, we trained the network using 1200 identities (each of them having at least 30 images) from celebA dataset. The identities can be found in: 
+We provided an example of our dataset that contains 5 identity folders from celebA dataset in the dataset folder. To train with full celebA dataset (or your own dataset), please setup the data in the same format. For the results generated in our paper, we trained the network using 1200 identities (each of them having at least 30 images) from celebA dataset. The identities can be found in: 
+
+
 
 ````
 dataset/celeba/legit_indices.npy
 ````
+
 
 We provide example of inference code in test.py file:
 
